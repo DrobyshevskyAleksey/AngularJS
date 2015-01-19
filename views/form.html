@@ -1,0 +1,42 @@
+<div ng-controller="formController">
+	<div class="alert alert-success" ng-show="message">
+		{{message}}
+	</div>
+
+	<form name="form" novalidate role="form">
+		<div class="form-group">
+			<label for="firstname">First name</label>
+			<span class="label label-danger" ng-show="submitted && form.firstname.$error.required">Required!</span>
+			<input type="text" name="firstname" ng-model="firstname" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label for="lastname">Last name</label>
+			<span class="label label-danger" ng-show="submitted && form.lastname.$error.required">Required!</span>
+			<input type="text" name="lastname" ng-model="lastname" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label for="phone">Phone</label>
+			<span class="label label-danger" ng-show="submitted && form.phone.$error.required">Required!</span>
+			<span class="label label-danger" ng-show="form.phone.$error.pattern">Phone can contain only numbers!</span>
+			<input type="text" name="phone" ng-model="phone" class="form-control" required ng-pattern="/\b\d+\b/"/>
+		</div>
+
+		<div class="form-group">
+			<label for="address">Address</label>
+			<span class="label label-danger" ng-show="submitted && form.address.$error.required">Required!</span>
+			<input type="text" name="address" ng-model="address" class="form-control" required/>
+		</div>
+
+		<div class="form-group">
+			<label for="notes">Notes</label>
+			<span class="label label-danger" ng-show="submitted && form.notes.$error.required">Required!</span>
+			<textarea name="notes" ng-model="notes" class="form-control" required></textarea>
+		</div>
+
+		<button ng-click="submit(form)" class="btn-primary btn-lg">
+			Submit
+		</button>
+	</form>
+</div>

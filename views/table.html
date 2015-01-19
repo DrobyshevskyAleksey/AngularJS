@@ -1,0 +1,18 @@
+<div ng-controller="tableController">
+	<table class="table">
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Phone</th>
+			<th>Address</th>
+			<th>Notes</th>
+		</tr>
+		<tr ng-repeat="user in data">
+			<td>{{user.firstname}}</td>
+			<td>{{user.lastname}}</td>
+			<td>{{user.phone}}</td>
+			<td>{{user.address}}</td>
+			<td>{{user.notes}}</td>
+		</tr>
+	</table>
+</div>
